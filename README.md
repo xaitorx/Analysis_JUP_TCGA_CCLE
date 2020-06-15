@@ -8,7 +8,7 @@
 Across 1100 patient tumor samples from TCGA-BRCA project
 Tumor subtype indicated by color code.
 
-![Slide1] (https://github.com/xaitorx/Analysis_JUP_TCGA_CCLE/blob/master/pics/scatterplot_IRE1_JUP.jpg)
+![Slide1] (https://github.com/xaitorx/Analysis_JUP_TCGA_CCLE/blob/master/pics/scatterplot_IRE1_JUP.JPG)
 
 
 # Schematic workflow
