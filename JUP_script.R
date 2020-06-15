@@ -40,7 +40,7 @@ View(tcga_brca_all) # genes in rows, samples in columns
 View(brca_subtype) # same order
 View(tissue_type) # same order
 
-# load IRE1_gene_sig (previously copied to your working directory)
+# load IRE1_gene_sig 
 breast_IRE1_sig <- read.csv(text = getURL("https://raw.githubusercontent.com/xaitorx/Analysis_JUP_TCGA_CCLE/master/data/breast_IRE1_sig.csv"))
 
 # calculate IRE1 score for each sample
