@@ -7,6 +7,7 @@ library("SummarizedExperiment")
 library("ggplot2")
 library("biomaRt")
 library("pheatmap")
+library("RCurl")
 
 # USE TCGAbiolinks package to download data from TCGA
 # first identify what data to download
@@ -40,7 +41,7 @@ View(brca_subtype) # same order
 View(tissue_type) # same order
 
 # load IRE1_gene_sig (previously copied to your working directory)
-breast_IRE1_sig <- read.csv("C:/Users/.../Desktop/Eoghan/breast_IRE1_sig.csv")
+breast_IRE1_sig <- read.csv(text = getURL("https://raw.githubusercontent.com/xaitorx/Analysis_JUP_TCGA_CCLE/master/data/breast_IRE1_sig.csv"))
 
 # calculate IRE1 score for each sample
 # mean of IRE1 positively correlated genes - mean of negatively correlated
@@ -143,8 +144,8 @@ p + geom_point(aes(colour = JUP_all_tum$PAM_50, size = 2, alpha = 0.5)) +
 # breast_cell_lines <- cbind(df[,1:2] ,df[, as.character(Cell_lines_breast$CCLE_ID)])
 # molecular subtypes taken from  doi: 10.7150/jca.18457
 
-breast_cell_lines <- read.csv("C:/Users/.../Desktop/Eoghan/breast_cell_lines.csv")
-breast_cell_lines_subtype <- read.csv("C:/Users/.../Desktop/Eoghan/breast_cell_lines_subtype.csv")
+breast_cell_lines <- read.csv(text = getURL("https://raw.githubusercontent.com/xaitorx/Analysis_JUP_TCGA_CCLE/master/data/breast_cell_lines.csv"))
+breast_cell_lines_subtype <- read.csv(text = getURL("https://raw.githubusercontent.com/xaitorx/Analysis_JUP_TCGA_CCLE/master/data/breast_cell_lines_subtype.csv"))
 
 # calculate IRE1 score for each cell line
 breast_IRE1_sig$SYMBOL <- as.character(breast_IRE1_sig$SYMBOL)
